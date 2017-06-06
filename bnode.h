@@ -2,11 +2,25 @@
 
 #ifndef BINARY_TREE
 #define BINARY_TREE
-
+#include "iostream"
 /***********************************************
  * BINARY NODE
- * A node to be used in a binary tree
+ * A node to be used in a binary tree. 
  **********************************************/
+template <class T>
+class BinaryNode
+{
+public:
+	BinaryNode() {}
+	BinaryNode(const T & t) : data(t) {}
+private:
+	T data;
+};
+
+/****************************************************
+* BINARY TREE
+* A group of binary nodes conected using pointers
+****************************************************/
 template <class T>
 class BinaryTree
 {
@@ -17,26 +31,31 @@ class BinaryTree
          data = T();
       }
       BinaryTree(const T & t): 
-         data(t), pParent(NULL), pLeft(NULL), pRight(NULL) {}
+         BinaryNode(t), pParent(NULL), pLeft(NULL), pRight(NULL) {}
       
       // methods
-      void addLeft (BNode <T> * pNode, BNode <T> * pAdd);
-      void addRight(BNode <T> * pNode, BNode <T> * pAdd);
-      void addLeft (BNode <T> * pNode, const T & t) throw (const char *);
-      void addRight(BNode <T> * pNode, const T & t) throw (const char *);
+      void addLeft (BinaryNode <T> * pNode, BinaryNode <T> * pAdd);
+      void addRight(BinaryNode <T> * pNode, BinaryNode <T> * pAdd);
+      void addLeft (BinaryNode <T> * pNode, const T & t) throw (const char *);
+      void addRight(BinaryNode <T> * pNode, const T & t) throw (const char *);
       
       // members
-      T data;
       BinaryTree <T> * pParent;
       BinaryTree <T> * pLeft;
       BinaryTree <T> * pRight;
 };
 
-// nonmember function prototypes
-void deleteBTree(BNode <T> * & pNode);
-std::ostream & out operator << (std::ostream & out, const BinaryTree <T> * rhs);
-
-
-
-
 #endif BINARY_TREE
+
+template<class T>
+// nonmember function prototypes
+void deleteBTree(BinaryNode <T> * & pNode)
+{
+
+}
+
+template <class T>
+std::ostream & operator << (std::ostream & out, const BinaryTree <T> * rhs)
+{
+
+}

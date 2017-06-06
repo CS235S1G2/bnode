@@ -111,6 +111,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\bnode.h" />
+    <ClInclude Include="..\huffman.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\bnode.cpp" />
+    <ClCompile Include="..\huffman.cpp" />
+    <ClCompile Include="..\week08.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

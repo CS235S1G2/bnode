@@ -10,7 +10,8 @@
 
 #ifndef HUFFMAN_H
 #define HUFFMAN_H
+#include <string>
 
-void huffman();
+void huffman(std::string fileName);
 
 #endif // HUFFMAN_h
