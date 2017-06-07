@@ -21,6 +21,9 @@
     <ClInclude Include="..\huffman.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\pair.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\huffman.cpp">

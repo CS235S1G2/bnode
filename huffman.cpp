@@ -11,29 +11,63 @@
 //       * create a Huffman class
 //       * implement using pair class
 #include "huffman.h"       // for HUFFMAN() prototype
+#include "pair.h"
+using namespace std;
+// TODO four functions: readFile(also inserts into list
+//                       sortList(creates Huffman Trees)
+//                       display(generates huffman code)
+//                       huffman: driver program
+
+// GLOBAL VARIABLES?
+// TODO add huffmanTree class definition here
+//List <Pair> huffmanSets;
+
+void readFile(string fileName)
+{
+
+}
+
+void sortList()
+{
+
+}
+
+void display()
+{
+
+}
+
 /*******************************************
  * HUFFMAN
  * Driver program to exercise the huffman generation code
  *******************************************/
-void huffman(std::string fileName)
+void huffman(string fileName)
 {
-	string input;
+	string inputToken;
+	double inputFrequency;
+	Pair <double, string> huffmanSet;
    // read values into a Binary Tree
 	ifstream myFile;
 	cerr << "FileName: " << fileName << endl;
-	myFile.open("/home/cs235/week08/huffman1.txt");
-	if (myFile.is_open())
-	{
-		while (getline(myFile, input))
+	// TODO for some reason it cant accept a string as a file name.
+	ifstream fin("/home/cs235/week08/huffman1.txt");
+	if (fin.fail())
+		cerr << "Unable to open file\n";
+	else
+		while (fin >> inputToken)
 		{
-			// store items in tree
+			// add name to pair
+			huffmanSet.second = inputToken;
+			// add value to pair
+			fin >> inputFrequency;
+			huffmanSet.first = inputFrequency;
+			// error checking
+			cerr << huffmanSet << endl;
+			// add pair to list
+
 		}
 		myFile.close();
-	}
-	else
-		cerr << "Unable to open file\n";
    // Generate Huffman Codes
    
    // Display resulting Huffman Codes
-   return;
 }

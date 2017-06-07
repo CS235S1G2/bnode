@@ -116,6 +116,7 @@
   <ItemGroup>
     <ClInclude Include="..\bnode.h" />
     <ClInclude Include="..\huffman.h" />
+    <ClInclude Include="..\pair.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\huffman.cpp" />
