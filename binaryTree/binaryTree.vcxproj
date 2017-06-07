@@ -76,6 +76,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -115,7 +118,6 @@
     <ClInclude Include="..\huffman.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\bnode.cpp" />
     <ClCompile Include="..\huffman.cpp" />
     <ClCompile Include="..\week08.cpp" />
   </ItemGroup>
