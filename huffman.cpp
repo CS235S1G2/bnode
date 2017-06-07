@@ -19,7 +19,7 @@ void huffman(std::string fileName)
 {
 	string input;
    // read values into a Binary Tree
-	fstream myFile;
+	ifstream myFile;
 	cerr << "FileName: " << fileName << endl;
 	myFile.open("/home/cs235/week08/huffman1.txt");
 	if (myFile.is_open())

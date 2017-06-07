@@ -13,6 +13,7 @@
 #include <string>
 #include <fstream>
 #include "pair.h"
+#include "bnode.h"
 using namespace std;
 
 void huffman(std::string fileName);
