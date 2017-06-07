@@ -17,8 +17,21 @@
  *******************************************/
 void huffman(std::string fileName)
 {
+	string input;
    // read values into a Binary Tree
-   
+	fstream myFile;
+	cerr << "FileName: " << fileName << endl;
+	myFile.open(fileName);
+	if (myFile.is_open())
+	{
+		while (getline(myFile, input))
+		{
+			// store items in tree
+		}
+		myFile.close();
+	}
+	else
+		cerr << "Unable to open file\n";
    // Generate Huffman Codes
    
    // Display resulting Huffman Codes

@@ -11,7 +11,9 @@
 #ifndef HUFFMAN_H
 #define HUFFMAN_H
 #include <string>
+#include <fstream>
 #include "pair.h"
+using namespace std;
 
 void huffman(std::string fileName);
 
