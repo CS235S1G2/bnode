@@ -13,6 +13,7 @@
 
 #include <string>
 #include <iostream>
+#include "vector.h"
 #include "bnode.h"
 
 void huffman(std::string & fileName);
