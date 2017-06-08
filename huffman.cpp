@@ -7,20 +7,18 @@
  * Summary:
  *    This program will implement the huffman() function
  ************************************************************************/
-// TODO suggested from project overview
-//       * create a Huffman class
-//       * implement using pair class
+
 #include "huffman.h"       // for HUFFMAN() prototype
+#include "bnode.h"
+#include "vector.h"        // for Vector
+#include <string>
+using namespace std;
+
 /*******************************************
  * HUFFMAN
  * Driver program to exercise the huffman generation code
  *******************************************/
-void huffman(std::string fileName)
+void huffman(std::string & fileName)
 {
-   // read values into a Binary Tree
-   
-   // Generate Huffman Codes
-   
-   // Display resulting Huffman Codes
    return;
 }
