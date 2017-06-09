@@ -21,6 +21,26 @@ using namespace std;
  *******************************************/
 void huffman(std::string & fileName)
 {
+   // initialize variables
+   Vector < Pair<string, float> > input;     // read the file into input
+   List <Huffman*> hList;                    // keep a list of Huffman objects to combine them (pointers?)
+   Huffman * hHead;			     // the head of the Huffman tree
+   
+   // Read the pairs into the vector
+   
+   // Read the pairs into hList OR create hList by searching for smallest in the vector
+   
+   // WHILE (!hList.size() > 1)
+   
+   // find 2 smallest frequencies
+   
+   // combine into hTree hHead and add that to the list
+   
+   // remove the 2 hTrees that were combined from the list (Or maybe the 1 tree, since add is void)
+   
+   // FOR 0 to vector.size()
+	// call extract
+	// output Huffman values in the order from the file
    return;
 }
 
