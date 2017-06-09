@@ -68,6 +68,21 @@ private:
 };
 
 /**********************************************
+ * HUFFMAN :: ADD
+ * adds the tree of a Huffman object to the current tree
+ ***********************************************/
+void Huffman :: add(Huffman * pTree)
+{
+   // check if pLeft is NULL
+   if (tree->pLeft == NULL)
+   {
+      tree->pLeft = pTree->tree;
+   }
+   else
+      tree->pRight = pTree->tree;
+}
+
+/**********************************************
  * PAIR
  * This class couples together a pair of values, which may be of
  * different types (T1 and T2). The individual values can be
