@@ -3,7 +3,7 @@
  *    Week 08, Huffman
  *    Brother Helfrich, CS 235
  * Author:
- *    <your name>
+ *    Nathan Bench, Jed Bilman, Jeremy Chandler, Justin Chandler
  * Summary:
  *    This program will implement the huffman() function
  ************************************************************************/
@@ -11,6 +11,7 @@
 #include "huffman.h"       // for HUFFMAN() prototype
 #include "bnode.h"
 #include "vector.h"        // for Vector
+#include "list.h"	   // for List
 #include <fstream>
 #include <string>
 using namespace std;
