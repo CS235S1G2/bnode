@@ -77,9 +77,9 @@ private:
 		const Vector < Pair <string, float > > & input,
 		Pair <string, string> output[]);
 
-	string* findRecursive(BinaryNode <Pair <string, float>> * tree, const string item);
+	string* findRecursive(BinaryNode <Pair <string, float> > * tree, const string item);
         BinaryNode < Pair <string, float> > * tree;
-        Vector <Pair<string, string>> huffmanCodes;
+        Vector <Pair<string, string> > huffmanCodes;
 
 };
 /****************************************************
