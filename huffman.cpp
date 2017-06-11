@@ -86,14 +86,14 @@ void huffman(const std::string & fileName)
 	cerr << "HELLO " << input[0]->getWeight() << endl;
    // remove the 2 hTrees that were combined from the list (Or maybe the 1 tree, since add is void)
    // get Huffman codes from tree
-    for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); ++it)
+    for (vector<string>::iterator it = variables.begin(); it != variables.end(); ++it)
 	{
 		string *huffmanCode = input[1]->find(*it); //find the frequency for the token
 		huffmanCode->append(*it); // append token to the end. example string: 1111A
 		output.push_back(huffmanCode); // push the string onto the output vector
 	}
 	// Cout vector
-	for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); ++it)
+	for (vector<string>::iterator it = variables.begin(); it != variables.end(); ++it)
 	{
 		char tempToken;
 		tempToken = (*it)[(*it).end()];
