@@ -89,8 +89,10 @@ void huffman(const std::string & fileName)
     for (vector<string>::iterator it = variables.begin(); it != variables.end(); ++it)
 	{
 		string *huffmanCode = input[1]->find(*it); //find the frequency for the token
+	    cerr << "CERR#2";
 		huffmanCode->append(*it); // append token to the end. example string: 1111A
 		output.push_back(huffmanCode); // push the string onto the output vector
+	    cerr << "CERR#1";
 	}
 	// Cout vector
 	for (vector<string>::iterator it = variables.begin(); it != variables.end(); ++it)
@@ -112,14 +114,12 @@ void huffman(const std::string & fileName)
 
 string * Huffman::find(const string item)
 {
-	cerr << "CERR#2";
 	string *huffmanCode = findRecursive(tree, item);
 	return huffmanCode;
 }
 
 string * Huffman::findRecursive(BinaryNode <Pair <string, float> > * tree, const string item)
 {
-	cerr << "CERR#1";
 	string huffman1(""); // one huffman code
 	string *huffmanCode = NULL; // pointer to the huffman code which will be passed on
 	if (tree->pLeft != NULL)  //if there is a node to the left GO LEFT
