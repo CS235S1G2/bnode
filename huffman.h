@@ -68,6 +68,7 @@ public:
 	{
 		extractRecursive(tree, string(""), input, output);
 	}
+        void printHuffmanCodes();
 
 private:
 	// the recursive verson of extract
@@ -76,7 +77,10 @@ private:
 		const Vector < Pair <string, float > > & input,
 		Pair <string, string> output[]);
 
-	BinaryNode < Pair <string, float> > * tree;
+	string* findRecursive(BinaryNode <Pair <string, float>> * tree, const string item);
+        BinaryNode < Pair <string, float> > * tree;
+        Vector <Pair<string, string>> huffmanCodes;
+
 };
 /****************************************************
 * HUFFMAN :: ADD
@@ -119,34 +123,5 @@ inline void Huffman::add(Huffman * pTree)
 //		;
 //}
 
-void Huffman::printHuffmanCodes()
-{
-	// get Huffman codes from tree
-
-	// place Huffman codes into a vector
-
-	// print vector
-
-}
-
-string * Huffman::findRecursive(BinaryNode <Pair <string, float>> * tree, const string item)
-{
-	string huffman1(""); // one huffman code
-	string *huffmanCode = NULL; // pointer to the huffman code which will be passed on
-	if (tree->pLeft != NULL)  //if there is a node to the left GO LEFT
-	{
-		huffmanCode->append("0");// add 0 to huffman code
-		findRecursive(tree->pLeft, item); // repeate process
-	}
-	if (tree->pRight != NULL) //if there is a node to the right GO RIGHT
-	{
-		huffmanCode->append("1");// add 1 to huffman code
-		findRecursive(tree->pRight, item); // repeate process
-	}
-	if (tree->pRight == NULL && tree->pLeft == NULL) // This is a leaf
-	{
-		huffmanCode = &huffman1;
-	}
-	return huffmanCode;
 
 #endif //HUFFMAN_cpp
