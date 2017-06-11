@@ -96,7 +96,7 @@ void huffman(const std::string & fileName)
 	for (vector<string>::iterator it = variables.begin(); it != variables.end(); ++it)
 	{
 		char tempToken;
-		tempToken = (*it)[(*it).end()];
+		tempToken = (*it)[(*it).size() - 1];
 		string tempCode;
 		(*it).pop_back();
 		tempCode = (*it);
