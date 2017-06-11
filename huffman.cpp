@@ -90,6 +90,36 @@ void huffman(const std::string & fileName)
    return;
 }
 
+void Huffman::printHuffmanCodes()
+{
+	// get Huffman codes from tree
+
+	// place Huffman codes into a vector
+
+	// print vector
+
+}
+
+string * Huffman::findRecursive(BinaryNode <Pair <string, float>> * tree, const string item)
+{
+	string huffman1(""); // one huffman code
+	string *huffmanCode = NULL; // pointer to the huffman code which will be passed on
+	if (tree->pLeft != NULL)  //if there is a node to the left GO LEFT
+	{
+		huffmanCode->append("0");// add 0 to huffman code
+		findRecursive(tree->pLeft, item); // repeate process
+	}
+	if (tree->pRight != NULL) //if there is a node to the right GO RIGHT
+	{
+		huffmanCode->append("1");// add 1 to huffman code
+		findRecursive(tree->pRight, item); // repeate process
+	}
+	if (tree->pRight == NULL && tree->pLeft == NULL) // This is a leaf
+	{
+		huffmanCode = &huffman1;
+	}
+	return huffmanCode;
+}
 void readFile(string & fileName)
 {
 	//string inputToken;
