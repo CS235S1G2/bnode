@@ -110,78 +110,43 @@ inline void Huffman::add(Huffman * pTree)
 * HUFFMAN :: Extract Recursive
 * The recursive version of extract
 ***********************************************/
-inline void Huffman::extractRecursive(BinaryNode<Pair<string, float> >* tree, string sPrefix,
-	const Vector<Pair<string, float> >& input, Pair<string, string> output[])
+//inline void Huffman::extractRecursive(BinaryNode<Pair<string, float> >* tree, string sPrefix,
+//	const Vector<Pair<string, float> >& input, Pair<string, string> output[])
+//{
+//	if (NULL)
+//		;
+//	else
+//		;
+//}
+
+void Huffman::printHuffmanCodes()
 {
-	if (NULL)
-		;
-	else
-		;
+	// get Huffman codes from tree
+
+	// place Huffman codes into a vector
+
+	// print vector
+
 }
 
-//**********************************************
-// * PAIR
-// * This class couples together a pair of values, which may be of
-// * different types (T1 and T2). The individual values can be
-// * accessed through its public members first and second.
-// *
-// * Additionally, when compairing two pairs, only T1 is compared. This
-// * is a key in a name-value pair.
-// ***********************************************/
-//template <class T1, class T2>
-//class Pair
-//{
-//public:
-//   // constructors
-//  Pair() : first(), second() {}
-//   Pair(const T1 & first, const T2 & second) : first(first), second(second) {}
-//   Pair(const Pair <T1, T2> & rhs) : first(rhs.first), second(rhs.second) {}
-//
-//   // copy the values
-//   Pair <T1, T2> & operator = (const Pair <T1, T2> & rhs)
-//   {
-//      first  = rhs.first;
-//      second = rhs.second;
-//      return *this;
-//   }
-//
-//   // constant fetchers
-//   const T1 & getFirst()  const { return first;  }
-//   const T2 & getSecond() const { return second; }
-//   
-//   // compare Pairs.  Only first will be compared!
-//   bool operator >  (const Pair & rhs) const { return first >  rhs.first; }
-//   bool operator >= (const Pair & rhs) const { return first >= rhs.first; }
-//   bool operator <  (const Pair & rhs) const { return first <  rhs.first; }
-//   bool operator <= (const Pair & rhs) const { return first <= rhs.first; }
-//   bool operator == (const Pair & rhs) const { return first == rhs.first; }
-//   bool operator != (const Pair & rhs) const { return first != rhs.first; }
-//   
-//   // these are public.  We cannot validate!
-//   T1 first;
-//   T2 second;
-//};
-//
-///*****************************************************
-// * PAIR INSERTION
-// * Display a pair for debug purposes
-// ****************************************************/
-//template <class T1, class T2>
-//inline std::ostream & operator << (std::ostream & out, const Pair <T1, T2> & rhs)
-//{
-//   out << '(' << rhs.first << ", " << rhs.second << ')';
-//   return out;
-//}
-//
-///*****************************************************
-// * PAIR EXTRACTION
-// * input a pair
-// ****************************************************/
-//template <class T1, class T2>
-//inline std::istream & operator >> (std::istream & in, Pair <T1, T2> & rhs)
-//{
-//   in >> rhs.first >> rhs.second;
-//   return in;
-//}
+string * Huffman::findRecursive(BinaryNode <Pair <string, float>> * tree, const string item)
+{
+	string huffman1(""); // one huffman code
+	string *huffmanCode = NULL; // pointer to the huffman code which will be passed on
+	if (tree->pLeft != NULL)  //if there is a node to the left GO LEFT
+	{
+		huffmanCode->append("0");// add 0 to huffman code
+		findRecursive(tree->pLeft, item); // repeate process
+	}
+	if (tree->pRight != NULL) //if there is a node to the right GO RIGHT
+	{
+		huffmanCode->append("1");// add 1 to huffman code
+		findRecursive(tree->pRight, item); // repeate process
+	}
+	if (tree->pRight == NULL && tree->pLeft == NULL) // This is a leaf
+	{
+		huffmanCode = &huffman1;
+	}
+	return huffmanCode;
 
 #endif //HUFFMAN_cpp
