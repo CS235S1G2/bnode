@@ -83,24 +83,20 @@ void huffman(const std::string & fileName)
 		//change last to this position and delete the end
 		input.pop_back();
 	}
-	cerr << "HELLO " << input[0]->getWeight() << endl;
    // remove the 2 hTrees that were combined from the list (Or maybe the 1 tree, since add is void)
    // get Huffman codes from tree
     for (vector<string>::iterator it = variables.begin(); it != variables.end(); ++it)
 	{
 		string *huffmanCode = input[1]->find(*it); //find the frequency for the token
-	    cerr << "CERR#2";
 	    if (huffmanCode != NULL)
 	    {
 		huffmanCode->append(*it); // append token to the end. example string: 1111A
 		output.push_back(huffmanCode); // push the string onto the output vector
 	    }
-	    cerr << "CERR#1";
 	}
 	// Cout vector
 	for (vector<string>::iterator it = variables.begin(); it != variables.end(); ++it)
 	{
-		cerr << "CERR#3";
 		char tempToken;
 		tempToken = (*it)[(*it).size() - 1];
 		string tempCode;
@@ -123,19 +119,13 @@ string * Huffman::find(const string item)
 
 string * Huffman::findRecursive(BinaryNode <Pair <string, float> > * tree, const string item)
 {
-	cerr << "Findfunction";
 	string huffman1 = ""; // one huffman code
-	cerr << "yeas";
 	string *huffmanCode = NULL; // pointer to the huffman code which will be passed on
 	if (tree->pLeft != NULL)  //if there is a node to the left GO LEFT
 	{
-		cerr << "aaaaaaaaaaaaaa";
 		huffman1.append("0");// add 0 to huffman code
-		cerr << "baaaaaaaaaab";
 		findRecursive(tree->pLeft, item); // repeate process
-		cerr << "caaaaaaaaaaaab";
 	}
-	cerr << "star";
 	if (tree->pRight != NULL) //if there is a node to the right GO RIGHT
 	{
 		huffman1.append("1");// add 1 to huffman code
