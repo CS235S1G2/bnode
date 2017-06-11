@@ -127,7 +127,7 @@ string * Huffman::findRecursive(BinaryNode <Pair <string, float> > * tree, const
 	if (tree->pLeft != NULL)  //if there is a node to the left GO LEFT
 	{
 		cerr << "aaaaaaaaaaaaaa";
-		huffmanCode->append("0");// add 0 to huffman code
+		huffman1.append("0");// add 0 to huffman code
 		cerr << "baaaaaaaaaab";
 		findRecursive(tree->pLeft, item); // repeate process
 		cerr << "caaaaaaaaaaaab";
@@ -135,7 +135,7 @@ string * Huffman::findRecursive(BinaryNode <Pair <string, float> > * tree, const
 	cerr << "star";
 	if (tree->pRight != NULL) //if there is a node to the right GO RIGHT
 	{
-		huffmanCode->append("1");// add 1 to huffman code
+		huffman1.append("1");// add 1 to huffman code
 		findRecursive(tree->pRight, item); // repeate process
 	}
 	if (tree->pRight == NULL && tree->pLeft == NULL) // This is a leaf
