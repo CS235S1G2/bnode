@@ -95,6 +95,7 @@ void huffman(const std::string & fileName)
 	// Cout vector
 	for (vector<string>::iterator it = variables.begin(); it != variables.end(); ++it)
 	{
+		cerr << "CERR#3";
 		char tempToken;
 		tempToken = (*it)[(*it).size() - 1];
 		string tempCode;
@@ -111,12 +112,14 @@ void huffman(const std::string & fileName)
 
 string * Huffman::find(const string item)
 {
+	cerr << "CERR#2";
 	string *huffmanCode = findRecursive(tree, item);
 	return huffmanCode;
 }
 
 string * Huffman::findRecursive(BinaryNode <Pair <string, float> > * tree, const string item)
 {
+	cerr << "CERR#1";
 	string huffman1(""); // one huffman code
 	string *huffmanCode = NULL; // pointer to the huffman code which will be passed on
 	if (tree->pLeft != NULL)  //if there is a node to the left GO LEFT
