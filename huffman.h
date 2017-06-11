@@ -61,13 +61,6 @@ public:
 
 	// get the weight of the top-most element in the tree
 	float getWeight() const { return tree->data.second; }
-
-	// extract the values from the tree
-	void extract(const vector <Pair <string, float > > & input,
-		Pair <string, string> output[])
-	{
-		extractRecursive(tree, string(""), input, output);
-	}
 	string *find(const string item);
 
 private:
