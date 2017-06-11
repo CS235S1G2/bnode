@@ -68,15 +68,10 @@ public:
 	{
 		extractRecursive(tree, string(""), input, output);
 	}
-        void printHuffmanCodes();
+	string *find(const string item);
 
 private:
 	// the recursive verson of extract
-	void extractRecursive(BinaryNode < Pair <string, float> > * tree,
-		string sPrefix,
-		const vector < Pair <string, float > > & input,
-		Pair <string, string> output[]);
-
 	string* findRecursive(BinaryNode <Pair <string, float> > * tree, const string item);
         BinaryNode < Pair <string, float> > * tree;
         vector <Pair<string, string> > huffmanCodes;
