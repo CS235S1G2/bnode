@@ -98,7 +98,7 @@ void huffman(const std::string & fileName)
 		char tempToken;
 		tempToken = (*it)[(*it).size() - 1];
 		string tempCode;
-		(*it).pop_back();
+		(*it).erase(((*it).size() -1),1);
 		tempCode = (*it);
 
 		cout << tempToken << " = " << tempCode << endl;
