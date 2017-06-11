@@ -29,7 +29,7 @@ void huffman(const std::string & fileName);
 #include <cassert>         // for ASSERT
 #include <string>          // for STRING: binary representation of codes
 #include "bnode.h"         // for BINARY_NODE class definition
-#include "vector.h"        // for VECTOR container
+#include <vector>        // for vector container
 #include "pair.h"          // for PAIR container
 
 using namespace std;
@@ -63,7 +63,7 @@ public:
 	float getWeight() const { return tree->data.second; }
 
 	// extract the values from the tree
-	void extract(const Vector <Pair <string, float > > & input,
+	void extract(const vector <Pair <string, float > > & input,
 		Pair <string, string> output[])
 	{
 		extractRecursive(tree, string(""), input, output);
@@ -74,12 +74,12 @@ private:
 	// the recursive verson of extract
 	void extractRecursive(BinaryNode < Pair <string, float> > * tree,
 		string sPrefix,
-		const Vector < Pair <string, float > > & input,
+		const vector < Pair <string, float > > & input,
 		Pair <string, string> output[]);
 
 	string* findRecursive(BinaryNode <Pair <string, float> > * tree, const string item);
         BinaryNode < Pair <string, float> > * tree;
-        Vector <Pair<string, string> > huffmanCodes;
+        vector <Pair<string, string> > huffmanCodes;
 
 };
 /****************************************************

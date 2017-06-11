@@ -13,7 +13,7 @@
 
 #include "huffman.h"       // for HUFFMAN() prototype
 #include "bnode.h"
-#include "vector.h"        // for Vector
+#include <vector>        // for vector
 #include "list.h"	   // for List
 #include <fstream>
 #include <string>
@@ -27,11 +27,11 @@ using namespace std;
 void huffman(const std::string & fileName)
 {
 	// initialize variables
-	Vector < Huffman* > input;     // read the file into input
+	vector < Huffman* > input;     // read the file into input
 
 	List <Huffman*> hList;                    // keep a list of Huffman objects to combine them (pointers?)
 	Huffman * hHead;			     // the head of the Huffman tree
-
+	vector <string> variables;
 
 
 	string inputToken;
@@ -55,13 +55,14 @@ void huffman(const std::string & fileName)
 			// add pair to list
 			Huffman * pNew = new Huffman(inputToken, inputFrequency);
 			input.push_back(pNew);
+			variables.push_back(inputToken);
 
 		}
 	fin.close();
 
 	// Read the pairs into hList OR create hList by searching for smallest in the vector
 	// WHILE (!hList.size() > 1)
-	while (input.size() > 0)
+	while (input.size() > 1)
 	{
 		// find 2 smallest frequencies
 		int smallest = 0;
@@ -77,11 +78,11 @@ void huffman(const std::string & fileName)
 		// combine into hTree hHead and add that to the list
 		Huffman * secondSmallestH = input[secondSmallest];
 		input[smallest]->add(input[secondSmallest]);
-		input[secondSmallest] = input[input.size()];
+		input[secondSmallest] = input[input.size() - 1];
 		//change last to this position and delete the end
-		delete input[input.size()];
+		input.pop_back();
 	}
-
+	cerr << "HELLO " << input[0]->getWeight() << endl;
    // remove the 2 hTrees that were combined from the list (Or maybe the 1 tree, since add is void)
    
    // FOR 0 to vector.size()
