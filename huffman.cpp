@@ -28,6 +28,7 @@ void huffman(const std::string & fileName)
 {
 	// initialize variables
 	vector < Huffman* > input;     // read the file into input
+	vector<string*> output;
 
 	List <Huffman*> hList;                    // keep a list of Huffman objects to combine them (pointers?)
 	Huffman * hHead;			     // the head of the Huffman tree
@@ -84,21 +85,34 @@ void huffman(const std::string & fileName)
 	}
 	cerr << "HELLO " << input[0]->getWeight() << endl;
    // remove the 2 hTrees that were combined from the list (Or maybe the 1 tree, since add is void)
-   
+   // get Huffman codes from tree
+    for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); ++it)
+	{
+		string *huffmanCode = input[1]->find(*it); //find the frequency for the token
+		huffmanCode->append(*it); // append token to the end. example string: 1111A
+		output.push_back(huffmanCode); // push the string onto the output vector
+	}
+	// Cout vector
+	for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); ++it)
+	{
+		char tempToken;
+		tempToken = (*it)[(*it).end()];
+		string tempCode;
+		(*it).pop_back();
+		tempCode = (*it);
+
+		cout << tempToken << " = " << tempCode << endl;
+	}
    // FOR 0 to vector.size()
 	// call extract
 	// output Huffman values in the order from the file
    return;
 }
 
-void Huffman::printHuffmanCodes()
+string * Huffman::find(const string item)
 {
-	// get Huffman codes from tree
-
-	// place Huffman codes into a vector
-
-	// print vector
-
+	string *huffmanCode = findRecursive(tree, item);
+	return huffmanCode;
 }
 
 string * Huffman::findRecursive(BinaryNode <Pair <string, float> > * tree, const string item)
