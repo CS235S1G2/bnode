@@ -3,6 +3,7 @@
 #ifndef BINARY_NODE
 #define BINARY_NODE
 
+#include <iostream> 
 /***********************************************
  * BINARY NODE
  * A node to be used in a binary tree
