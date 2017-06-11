@@ -90,8 +90,11 @@ void huffman(const std::string & fileName)
 	{
 		string *huffmanCode = input[1]->find(*it); //find the frequency for the token
 	    cerr << "CERR#2";
+	    if (huffmanCode != NULL)
+	    {
 		huffmanCode->append(*it); // append token to the end. example string: 1111A
 		output.push_back(huffmanCode); // push the string onto the output vector
+	    }
 	    cerr << "CERR#1";
 	}
 	// Cout vector
