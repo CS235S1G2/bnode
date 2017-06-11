@@ -121,7 +121,8 @@ string * Huffman::find(const string item)
 string * Huffman::findRecursive(BinaryNode <Pair <string, float> > * tree, const string item)
 {
 	cerr << "Findfunction";
-	string huffman1(""); // one huffman code
+	string huffman1 = ""; // one huffman code
+	cerr << "yeas";
 	string *huffmanCode = NULL; // pointer to the huffman code which will be passed on
 	if (tree->pLeft != NULL)  //if there is a node to the left GO LEFT
 	{
