@@ -91,9 +91,9 @@ void huffman(const std::string & fileName)
 	    if (huffmanCode != NULL)
 	    {
 		cerr << "adding a Huffman Code to string......\n";
-		    cerr << (*it);
 		huffmanCode->append(*it); // append token to the end. example string: 1111A
 		output.push_back(huffmanCode); // push the string onto the output vector
+		    		    cerr << (*it);
 	    }
 	}
 	// Cout vector
