@@ -110,18 +110,5 @@ inline void Huffman::add(Huffman * pTree)
 	// make the new tree the root and all
 	tree = pNew;
 }
-/**********************************************
-* HUFFMAN :: Extract Recursive
-* The recursive version of extract
-***********************************************/
-//inline void Huffman::extractRecursive(BinaryNode<Pair<string, float> >* tree, string sPrefix,
-//	const Vector<Pair<string, float> >& input, Pair<string, string> output[])
-//{
-//	if (NULL)
-//		;
-//	else
-//		;
-//}
-
 
 #endif //HUFFMAN_cpp

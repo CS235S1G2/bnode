@@ -120,31 +120,4 @@ string * Huffman::findRecursive(BinaryNode <Pair <string, float> > * tree, const
 	}
 	return huffmanCode;
 }
-void readFile(string & fileName)
-{
-	//string inputToken;
-	//double inputFrequency;
-	//Pair <double, string> huffmanSet;
-
-	//ifstream myFile;
-	//cerr << "FileName: " << fileName << endl;
-	//// TODO for some reason it cant accept a string as a file name.
-	//ifstream fin("/home/cs235/week08/huffman1.txt");
-	//if (fin.fail())
-	//	cerr << "Unable to open file\n";
-	//else
-	//	while (fin >> inputToken)
-	//	{
-	//		// add name to pair
-	//		huffmanSet.second = inputToken;
-	//		// add value to pair
-	//		fin >> inputFrequency;
-	//		huffmanSet.first = inputFrequency;
-	//		// error checking
-	//		cerr << huffmanSet << endl;
-	//		// add pair to list
-
-	//	}
-	//myFile.close();
-}
 #endif //HUFFMAN_H
